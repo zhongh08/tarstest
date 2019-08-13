@@ -1,0 +1,10 @@
+<servants>
+    <servant name="HelloObj">
+        <home-api>com.haowei.tarstest.tars.HelloServant</home-api>
+        <home-class>com.haowei.tarstest.tars.impl.HelloServantImpl</home-class>
+    </servant>
+    <servant name="TestObj">
+        <home-api>com.haowei.tarstest.tars.TestServant</home-api>
+        <home-class>com.haowei.tarstest.tars.impl.TestServantImpl</home-class>
+    </servant>
+</servants>
