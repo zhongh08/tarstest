@@ -7,4 +7,6 @@ public interface HelloServant {
 
     public String hello(int no, String name);
 
+    public String hello2(String name);
+
 }

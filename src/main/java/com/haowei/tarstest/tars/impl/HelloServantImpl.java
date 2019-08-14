@@ -11,4 +11,9 @@ public class HelloServantImpl implements HelloServant {
         return String.format("hello no=%s, name=%s, time=%s", no, name, System.currentTimeMillis());
     }
 
+    @Override
+    public String hello2(String name) {
+        return String.format("hello2 name=%s, time=%s", name, System.currentTimeMillis());
+    }
+
 }
