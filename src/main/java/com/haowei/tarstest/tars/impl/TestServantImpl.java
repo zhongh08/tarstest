@@ -1,6 +1,6 @@
 package com.haowei.tarstest.tars.impl;
 
-import com.haowei.tarstest.tars.TestServant;
+import com.haowei.tarstest.tars.testapp.TestServant;
 import com.qq.tars.spring.annotation.TarsServant;
 
 @TarsServant("TestObj")

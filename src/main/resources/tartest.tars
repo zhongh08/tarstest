@@ -1,10 +1,63 @@
 module TestApp
 {
+    //分页参数
+    struct PageUtils
+    {
+        //（页码）
+        0 optional long pageNo = 1;
+        //（每页条数）
+        1 optional long pageSize = 10;
+    	//（总数量）
+        2 optional long pageCount = 0;
+    };
+
+    struct RspHeader
+    {
+        0 require int iRequestID;
+        1 require int iRet;
+        2 require string sResultDesc;
+        3 require long iUniqueID;
+        4 require int iInterValMs;
+    };
+
+    struct FindBillListReq
+    {
+        //业务类型
+        0 require int serviceType;
+        //用户ID
+    	1 require int uid;
+    	2 optional PageUtils page;
+    };
+
+    struct Bill
+    {
+        // 停车场名称
+        0 require string parkName;
+        // 支付金额(单位:分)
+        1 require int payAmount;
+        // 车牌号码
+        2 require string plateNo;
+        // 付费时间
+        3 require string payTime;
+    };
+
+    struct BillRsp
+    {
+        //应用协议返回消息头
+    	0 require RspHeader rspHeader;
+    	//订单列表集合
+    	1 require vector<Bill> billList;
+    	//分页参数
+    	2 optional PageUtils pageUtils;
+    };
+
 	interface Hello
 	{
 	    string hello(int no, string name);
 
 	    string hello2(string name);
+
+	    int findBillList(FindBillListReq req, out BillRsp rsp);
 	};
 
 	interface Test

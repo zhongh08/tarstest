@@ -56,6 +56,30 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <plugin>
+                <groupId>com.tencent.tars</groupId>
+                <artifactId>tars-maven-plugin</artifactId>
+                <version>1.6.1</version>
+                <configuration>
+                    <tars2JavaConfig>
+                        <!-- tars文件位置 -->
+                        <tarsFiles>
+                            <tarsFile>${basedir}/src/main/resources/tartest.tars</tarsFile>
+                        </tarsFiles>
+                        <!-- 源文件编码 -->
+                        <tarsFileCharset>UTF-8</tarsFileCharset>
+                        <!-- 生成代码，PS：客户端调用，这里需要设置为false -->
+                        <servant>true</servant>
+                        <!-- 生成源代码编码 -->
+                        <charset>UTF-8</charset>
+                        <!-- 生成的源代码目录 -->
+                        <srcPath>${basedir}/src/main/java</srcPath>
+                        <!-- 生成源代码包前缀 -->
+                        <packagePrefixName>com.haowei.tarstest.tars.</packagePrefixName>
+                    </tars2JavaConfig>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
